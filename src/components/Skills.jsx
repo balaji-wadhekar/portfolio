@@ -43,7 +43,7 @@ const Skills = () => {
   };
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-gray-950 border-t border-gray-800">
+    <section id="skills" className="py-24 relative overflow-hidden bg-transparent border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -52,11 +52,11 @@ const Skills = () => {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4 inline-flex items-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-4 inline-flex items-center transition-colors duration-300">
             <span className="text-cyan-400 mr-4 text-2xl font-mono">02.</span>
             Technical Arsenal
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-600 dark:text-slate-400 text-lg max-w-2xl mx-auto transition-colors duration-300">
             A comprehensive overview of the technologies, languages, and concepts I leverage to build robust solutions.
           </p>
         </motion.div>
@@ -75,20 +75,20 @@ const Skills = () => {
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="bg-gray-900/80 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 md:p-8 flex flex-col h-full shadow-lg hover:shadow-cyan-500/10 cursor-default"
+              className="bg-white dark:bg-slate-900 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-2xl p-6 md:p-8 flex flex-col h-full shadow-md dark:shadow-none hover:shadow-xl cursor-default transition-all duration-300"
             >
               <div className="flex items-center mb-6">
-                <div className="p-3 bg-gray-800 rounded-lg mr-4">
+                <div className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg mr-4 transition-colors duration-300">
                   {category.icon}
                 </div>
-                <h3 className="text-2xl font-semibold text-gray-100 tracking-wide">
+                <h3 className="text-2xl font-semibold text-slate-900 dark:text-white tracking-wide transition-colors duration-300">
                   {category.category}
                 </h3>
               </div>
 
               <ul className="space-y-3 flex-grow">
                 {category.skills.map((skill, skillIndex) => (
-                  <li key={skillIndex} className="flex items-center text-gray-400">
+                  <li key={skillIndex} className="flex items-center text-slate-600 dark:text-slate-400 transition-colors duration-300">
                     <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 mr-3"></span>
                     <span className="text-base sm:text-lg hover:text-cyan-300 transition-colors duration-200">
                       {skill}

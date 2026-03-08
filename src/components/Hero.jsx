@@ -1,83 +1,91 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 
 const Hero = () => {
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-      {/* Background gradients */}
-      <div className="absolute inset-0 bg-gray-950">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl" />
-      </div>
+    <section id="home" className="min-h-screen bg-slate-50 dark:bg-slate-950 transition-colors duration-300 flex flex-col justify-center items-center py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Left Column (Image) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="space-y-4"
+          className="lg:w-1/2 flex justify-center lg:justify-end w-full"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <motion.h2
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-cyan-400 font-medium tracking-wide text-lg sm:text-xl"
-          >
-            Hi, my name is
-          </motion.h2>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-5xl sm:text-7xl font-extrabold tracking-tight text-white mb-4"
-          >
-            Balaji
-          </motion.h1>
-
-          <motion.h3
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            className="text-3xl sm:text-5xl font-bold text-gray-400 mt-4 mb-6"
-          >
-             Data Analyst | Frontend Developer
-          </motion.h3>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-            className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400 leading-relaxed"
-          >
-
-
-        As a Data Analytics student, I specialize in transforming complex datasets into compelling, actionable narratives.
-      <span className="text-gray-200 font-medium"> </span>.
-            My focus lies in statistical analysis, data visualization, and building predictive models using <span className="text-gray-200 font-medium">Python</span> and <span className="text-gray-200 font-medium">Machine Learning</span>.
-          </motion.p>
+          <div className="relative shadow-[0_0_40px_rgba(59,130,246,0.3)] rounded-full">
+            {/* Placeholder Image */}
+            <img
+              src="/profile.jpeg"
+              alt="Balaji Wadhekar"
+              className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full object-cover border-4 border-slate-200 dark:border-slate-800 transition-colors duration-300"
+            />
+          </div>
         </motion.div>
 
+        {/* Right Column (Text & CTAs) */}
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.2, duration: 1 }}
-          className="mt-16 flex justify-center"
+          className="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6 w-full"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
-          <a
-            href="#about"
-            className="group flex flex-col items-center text-gray-400 hover:text-cyan-400 transition-colors"
-          >
-            <span className="text-sm tracking-widest mb-2 uppercase">Discover More</span>
-            <motion.div
-              animate={{ y: [0, 8, 0] }}
-              transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight transition-colors duration-300">
+            Hello, I am <br className="hidden lg:block pb-2" />
+            <span className="bg-gradient-to-r from-blue-500 to-emerald-500 dark:from-blue-400 dark:to-emerald-400 bg-clip-text text-transparent">
+              Balaji Wadhekar
+            </span>
+          </h1>
+
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 dark:text-white transition-colors duration-300">
+            Data Analyst & AI Enthusiast
+          </h2>
+
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed transition-colors duration-300">
+            A Computer Engineering student at MIT ADT University, Pune. Passionate about uncovering insights from complex datasets, building AI-powered analytical tools, and leveraging Python, SQL, and Machine Learning to solve real-world problems.
+          </p>
+
+          {/* Call to Action Area (Icons Only) */}
+          <div className="flex items-center gap-8 pt-6">
+            <a
+              href="/Wadhekar_Balaji_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-all hover:scale-125 text-3xl"
+              aria-label="Resume"
+              title="View Resume"
             >
-              <ArrowDown className="text-cyan-400" />
-            </motion.div>
-          </a>
+              <FaFileAlt />
+            </a>
+            <a
+              href="#contact"
+              className="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-all hover:scale-125 text-3xl"
+              aria-label="Contact"
+            >
+              <FaEnvelope />
+            </a>
+            <a
+              href="https://github.com/balaji-wadhekar"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-all hover:scale-125 text-3xl"
+              aria-label="GitHub"
+            >
+              <FaGithub />
+            </a>
+            <a
+              href="https://linkedin.com/in/balaji-babasaheb-wadhekar-0a0237354"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-all hover:scale-125 text-3xl"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedin />
+            </a>
+          </div>
         </motion.div>
+
       </div>
     </section>
   );

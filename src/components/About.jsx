@@ -47,7 +47,7 @@ const About = () => {
   };
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-gray-900 border-t border-gray-800">
+    <section id="about" className="py-24 relative overflow-hidden bg-transparent border-t border-slate-200 dark:border-slate-800 transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,17 +56,17 @@ const About = () => {
           transition={{ duration: 0.6 }}
           className="mb-16 md:w-2/3"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 flex items-center">
+          <h2 className="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-white mb-6 flex items-center transition-colors duration-300">
             <span className="text-cyan-400 mr-4 text-2xl font-mono">01.</span>
             About Me
-            <div className="ml-6 flex-grow h-px bg-gray-800"></div>
+            <div className="ml-6 flex-grow h-px bg-slate-200 dark:bg-slate-800 transition-colors duration-300"></div>
           </h2>
-          <p className="text-gray-400 text-lg leading-relaxed">
+          <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed transition-colors duration-300">
             I am a passionate 4th-semester Computer Engineering student based at MITSOC.
             My journey in software engineering is driven by a curiosity to understand how systems work
             under the hood, scaling from foundational <span className="text-cyan-400">Data Structures</span> to complex <span className="text-cyan-400">OS Architectures</span>.
           </p>
-          <p className="text-gray-400 text-lg leading-relaxed mt-4">
+          <p className="text-slate-600 dark:text-slate-400 text-lg leading-relaxed mt-4 transition-colors duration-300">
             Currently, I am heavily focused on building reliable backends with <span className="tailwind-white-glow">Node.js</span> and <span className="tailwind-white-glow">JavaScript</span>,
             while also expanding my knowledge horizontally into emerging fields like <span className="text-purple-400">AI/ML</span> and <span className="text-yellow-400">Blockchain</span>.
           </p>
@@ -83,13 +83,13 @@ const About = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-gray-800/50 hover:bg-gray-800 transition-colors duration-300 p-6 rounded-xl border border-gray-700/50 flex flex-col items-start group"
+              className="bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors duration-300 p-6 rounded-xl shadow-md dark:shadow-none border border-slate-200 dark:border-slate-800 flex flex-col items-start group"
             >
-              <div className="p-3 bg-gray-900 rounded-lg group-hover:scale-110 transition-transform duration-300 mb-4">
+              <div className="p-3 bg-slate-100 dark:bg-slate-800 rounded-lg group-hover:scale-110 transition-all duration-300 mb-4">
                 {skill.icon}
               </div>
-              <h3 className="text-xl font-semibold text-white mb-3 tracking-wide">{skill.title}</h3>
-              <p className="text-gray-400 leading-relaxed text-sm">
+              <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-3 tracking-wide transition-colors duration-300">{skill.title}</h3>
+              <p className="text-slate-600 dark:text-slate-400 leading-relaxed text-sm transition-colors duration-300">
                 {skill.description}
               </p>
             </motion.div>
