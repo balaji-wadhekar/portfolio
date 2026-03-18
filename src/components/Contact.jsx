@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaFileAlt, FaLinkedin, FaGithub, FaMapMarkerAlt, FaPhone } from 'react-icons/fa';
 
@@ -38,7 +39,7 @@ const Contact = () => {
   };
 
   const contactData = [
-    { id: 1, icon: <FaFileAlt className="w-6 h-6" />, title: 'Resume', detail: 'View My Resume', link: '/Wadhekar_Balaji_Resume.pdf' },
+    { id: 1, icon: <FaFileAlt className="w-6 h-6" />, title: 'Resume', detail: 'View My Resume', link: '/resume', isRouterLink: true },
     { id: 2, icon: <FaLinkedin className="w-6 h-6" />, title: 'LinkedIn', detail: 'balaji-wadhekar', link: 'https://linkedin.com/in/balaji-babasaheb-wadhekar-0a0237354' },
     { id: 3, icon: <FaGithub className="w-6 h-6" />, title: 'GitHub', detail: 'balaji-wadhekar', link: 'https://github.com/balaji-wadhekar' },
     { id: 4, icon: <FaMapMarkerAlt className="w-6 h-6" />, title: 'Location', detail: 'Pune, Maharashtra', link: null },
@@ -92,15 +93,27 @@ const Contact = () => {
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                 >
                   {item.link ? (
-                    <a href={item.link} target="_blank" rel="noopener noreferrer" className="bg-white dark:bg-[#111827] rounded-lg p-4 flex items-center gap-4 hover:bg-slate-100 dark:hover:bg-slate-800 transition duration-300 border border-slate-200 dark:border-transparent shadow-sm dark:shadow-none group">
-                      <div className="bg-blue-50 dark:bg-[#1f2937] p-3 rounded-md text-blue-600 dark:text-blue-500 transition-colors duration-300 group-hover:scale-110">
-                        {item.icon}
-                      </div>
-                      <div>
-                        <h4 className="text-slate-900 dark:text-white text-sm font-medium transition-colors duration-300">{item.title}</h4>
-                        <p className="text-blue-600 dark:text-blue-500 font-semibold transition-colors duration-300">{item.detail}</p>
-                      </div>
-                    </a>
+                    item.isRouterLink ? (
+                      <Link to={item.link} target="_blank" rel="noopener noreferrer" className="bg-white dark:bg-[#111827] rounded-lg p-4 flex items-center gap-4 hover:bg-slate-100 dark:hover:bg-slate-800 transition duration-300 border border-slate-200 dark:border-transparent shadow-sm dark:shadow-none group">
+                        <div className="bg-blue-50 dark:bg-[#1f2937] p-3 rounded-md text-blue-600 dark:text-blue-500 transition-colors duration-300 group-hover:scale-110">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <h4 className="text-slate-900 dark:text-white text-sm font-medium transition-colors duration-300">{item.title}</h4>
+                          <p className="text-blue-600 dark:text-blue-500 font-semibold transition-colors duration-300">{item.detail}</p>
+                        </div>
+                      </Link>
+                    ) : (
+                      <a href={item.link} target="_blank" rel="noopener noreferrer" className="bg-white dark:bg-[#111827] rounded-lg p-4 flex items-center gap-4 hover:bg-slate-100 dark:hover:bg-slate-800 transition duration-300 border border-slate-200 dark:border-transparent shadow-sm dark:shadow-none group">
+                        <div className="bg-blue-50 dark:bg-[#1f2937] p-3 rounded-md text-blue-600 dark:text-blue-500 transition-colors duration-300 group-hover:scale-110">
+                          {item.icon}
+                        </div>
+                        <div>
+                          <h4 className="text-slate-900 dark:text-white text-sm font-medium transition-colors duration-300">{item.title}</h4>
+                          <p className="text-blue-600 dark:text-blue-500 font-semibold transition-colors duration-300">{item.detail}</p>
+                        </div>
+                      </a>
+                    )
                   ) : (
                     <div className="bg-white dark:bg-[#111827] rounded-lg p-4 flex items-center gap-4 hover:bg-slate-100 dark:hover:bg-slate-800 transition duration-300 border border-slate-200 dark:border-transparent shadow-sm dark:shadow-none cursor-default">
                       <div className="bg-blue-50 dark:bg-[#1f2937] p-3 rounded-md text-blue-600 dark:text-blue-500 transition-colors duration-300">

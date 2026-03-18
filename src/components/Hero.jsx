@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope, FaFileAlt } from 'react-icons/fa';
 
@@ -48,8 +49,8 @@ const Hero = () => {
 
           {/* Call to Action Area (Icons Only) */}
           <div className="flex items-center gap-8 pt-6">
-            <a
-              href="/Wadhekar_Balaji_Resume.pdf"
+            <Link
+              to="/resume"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-all hover:scale-125 text-3xl"
@@ -57,7 +58,7 @@ const Hero = () => {
               title="View Resume"
             >
               <FaFileAlt />
-            </a>
+            </Link>
             <a
               href="#contact"
               className="text-slate-600 hover:text-blue-600 dark:text-slate-400 dark:hover:text-blue-400 transition-all hover:scale-125 text-3xl"
