@@ -20,10 +20,10 @@ const Projects = () => {
       live: '#'
     },
     {
-      title: 'Blockchain Voting DApp',
-      description: 'A decentralized voting application built on Ethereum testnet. Ensures transparent and immutable voting records using Solidity smart contracts.',
-      tech: ['Solidity', 'React', 'Ethers.js', 'Hardhat'],
-      github: '#',
+      title: 'College Grievance Redressal Portal',
+      description: 'A full-stack web portal designed for secure student grievance submission and real-time admin resolution tracking. Features include role-based authentication and seamless database integration for efficient grievance handling.',
+      tech: ['Node.js', 'Express.js', 'MongoDB', 'JavaScript'],
+      github: 'https://github.com/balaji-wadhekar/College-Redressal-Portal.git',
       live: '#'
     },
     {
@@ -88,10 +88,10 @@ const Projects = () => {
               <div className="flex justify-between items-center mb-6">
                 <FolderGit2 className="w-10 h-10 text-cyan-400 group-hover:text-white transition-colors duration-300" />
                 <div className="flex space-x-4">
-                  <a href={project.github} className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 transition-all">
+                  <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`GitHub repository for ${project.title}`} className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 transition-all">
                     <Github className="w-5 h-5" />
                   </a>
-                  <a href={project.live} className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 transition-all">
+                  <a href={project.live} target="_blank" rel="noopener noreferrer" aria-label={`Live demo for ${project.title}`} className="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:scale-110 transition-all">
                     <ExternalLink className="w-5 h-5" />
                   </a>
                 </div>
